@@ -38,7 +38,9 @@ Il potenziometro consente di scegliere il **livello di difficoltà** prima dell�
 Maggiore è la difficoltà, **più alto sarà il valore del fattore F** e quindi **più breve sarà il tempo concesso** per completare la sequenza.
 
 
-
 ## Fine
 Progetto didattico per sistemi embedded — *“Turn on the Sequence!”*  
 Realizzato come esercizio di programmazione e gestione input/output in ambiente microcontrollore.
+[Assignment 1](https://github.com/pslab-unibo/esiot-2025-2026/blob/afeac2a3f7714b4b032c6892006c09e490535b7c/docs/assignment-01.md)
+
+
