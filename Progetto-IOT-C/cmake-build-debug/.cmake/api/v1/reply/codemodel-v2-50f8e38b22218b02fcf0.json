@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/Users/lucafabbri/Desktop/Progetto-IOT-C/cmake-build-debug",
-		"source" : "/Users/lucafabbri/Desktop/Progetto-IOT-C"
+		"build" : "/Users/lucafabbri/Desktop/IOT-Assignment1/Progetto-IOT-C/cmake-build-debug",
+		"source" : "/Users/lucafabbri/Desktop/IOT-Assignment1/Progetto-IOT-C"
 	},
 	"version" : 
 	{

@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/Users/lucafabbri/Desktop/Progetto-IOT-C/cmake-build-debug"
+			"value" : "/Users/lucafabbri/Desktop/IOT-Assignment1/Progetto-IOT-C/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -479,7 +479,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/lucafabbri/Desktop/Progetto-IOT-C/cmake-build-debug/CMakeFiles/pkgRedirects"
+			"value" : "/Users/lucafabbri/Desktop/IOT-Assignment1/Progetto-IOT-C/cmake-build-debug/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -539,7 +539,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/Users/lucafabbri/Desktop/Progetto-IOT-C"
+			"value" : "/Users/lucafabbri/Desktop/IOT-Assignment1/Progetto-IOT-C"
 		},
 		{
 			"name" : "CMAKE_INSTALL_NAME_TOOL",
@@ -1127,7 +1127,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/lucafabbri/Desktop/Progetto-IOT-C/cmake-build-debug"
+			"value" : "/Users/lucafabbri/Desktop/IOT-Assignment1/Progetto-IOT-C/cmake-build-debug"
 		},
 		{
 			"name" : "Progetto_IOT_C_IS_TOP_LEVEL",
@@ -1151,7 +1151,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/lucafabbri/Desktop/Progetto-IOT-C"
+			"value" : "/Users/lucafabbri/Desktop/IOT-Assignment1/Progetto-IOT-C"
 		}
 	],
 	"kind" : "cache",

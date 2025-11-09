@@ -1,0 +1,62 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <unistd.h>
+
+#define MAXARRAY 4
+
+int array[4];
+
+void gotosleep(int s){
+    sleep(s);
+}
+
+void genArray(){
+    srand(time(NULL) + array[2]);
+    int x, y = 0, z = 0, w;
+    x = rand()%4 + 1;
+    while (y == x || y == 0) y = rand()%4 + 1;
+    while( z == x || z == y || z == 0) z = rand()%4 + 1;
+    w = 10 - x - y - z;
+
+    array[0] = x;
+    array[1] = y;
+    array[2] = z;
+    array[3] = w;
+}
+
+int main(){
+
+    int b1, b2, b3, b4;
+
+    int temp;
+
+    while(1){
+        srand(time(NULL));
+
+         genArray();
+
+        for(int i = 0; i < MAXARRAY; i++){
+            printf("%d", array[i]);
+        }
+        printf("\n\n");
+        gotosleep(3);
+        printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+
+        scanf("%d", &b1);
+        scanf("%d", &b2);
+        scanf("%d", &b3);
+        scanf("%d", &b4);
+
+        if(b1 == array[0] && b2 == array[1] && b3 == array[2] && b4 == array[3]){
+            printf("Combinazione corretta!\n\n");
+        }else{
+            printf("Nicola Mocassino\n\n");
+            break;
+        }
+
+        gotosleep(3);
+
+    }
+
+}
