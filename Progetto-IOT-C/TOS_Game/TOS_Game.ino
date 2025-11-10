@@ -16,6 +16,4 @@ void loop() {
   int sensor_value = readPotentiometer(); 
   
   updateGame(pin1_state, pin2_state, pin3_state, pin4_state, sensor_value);  
-
-  delay(1); 
 }

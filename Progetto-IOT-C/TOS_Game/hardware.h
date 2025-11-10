@@ -10,12 +10,8 @@
 #define PIN4 5
 #define SENSOR A0
 
-// Pin dei LED (LS deve essere PWM, ~)
+// Led Rosso
 #define PIN_LS 10 
-#define PIN_L1 6
-#define PIN_L2 7
-#define PIN_L3 8
-#define PIN_L4 9
 
 // Dichiarazione Esterna LCD
 extern LiquidCrystal_I2C lcd; 
@@ -33,7 +29,6 @@ void lcd_print_sequence(const int sequence[], int length);
 
 // Prototipi per la gestione dei LED (MANCANTI)
 void pulse_led_ls(); 
-void set_led_ls(bool state); 
-void set_led_l(int index, bool state); // index 1-4
+void set_led_ls(bool state);
 
-#endif // HARDWARE_H
+#endif 

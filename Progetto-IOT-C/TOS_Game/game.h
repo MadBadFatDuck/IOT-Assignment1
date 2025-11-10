@@ -25,5 +25,6 @@ void genArray();
 void handleShowSequence(); 
 void handleWaitInput(int pin1_state, int pin2_state, int pin3_state, int pin4_state);
 void handleCheckResult(); 
+void handleGameOver();
 
 #endif 

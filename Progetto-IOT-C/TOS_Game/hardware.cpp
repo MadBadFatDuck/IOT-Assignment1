@@ -3,10 +3,14 @@
 #include "hardware.h" 
 #include <Wire.h> 
 
+// Librerie necessarie per il Deep Sleep
+#include <avr/sleep.h> 
+#include <avr/wdt.h>   
+
 // DEFIZIONE e INIZIALIZZAZIONE LCD (Usa il tuo indirizzo I2C, es. 0x27)
 LiquidCrystal_I2C lcd(0x27, 16, 2); 
 
-// --- Implementazioni LCD (già concordate) ---
+// LCD
 
 void lcd_setup() {
     Wire.begin();
@@ -41,33 +45,20 @@ void lcd_print_sequence(const int sequence[], int length) {
 }
 
 
-// --- Implementazioni LED (MANCANTI: RISOLVE GLI ERRORI) ---
+// LED
 
 // Accende/spegne il LED rosso LS
 void set_led_ls(bool state) {
     digitalWrite(PIN_LS, state ? HIGH : LOW);
 }
 
-// Accende/spegne un LED verde (index 1..4)
-void set_led_l(int index, bool state) {
-    int pin = 0;
-    if (index == 1) pin = PIN_L1;
-    else if (index == 2) pin = PIN_L2;
-    else if (index == 3) pin = PIN_L3;
-    else if (index == 4) pin = PIN_L4;
-    
-    if (pin != 0) {
-        digitalWrite(pin, state ? HIGH : LOW);
-    }
-}
 
-// Fa pulsare il LED rosso LS (richiede PIN_LS su un pin PWM)
+// Pulse del led Rosso
 void pulse_led_ls() {
     static unsigned long last_time = 0;
     static int brightness = 0;
     static int fadeAmount = 5;
     
-    // Aggiorna la luminosità (effetto sfumato)
     if (millis() - last_time > 30) { 
         analogWrite(PIN_LS, brightness);
         brightness = brightness + fadeAmount;
@@ -80,26 +71,46 @@ void pulse_led_ls() {
 }
 
 
-// --- Funzione Principale di Setup (AGGIORNA I PIN DEI LED) ---
+// Deep Sleep
+
+void wakeUpISR() {
+  sleep_disable();
+  
+}
+
+// DeepSleep
+void enterDeepSleep() {
+
+  attachInterrupt(digitalPinToInterrupt(PIN1), wakeUpISR, RISING); 
+  
+  ADCSRA &= ~(1<<ADEN); 
+  
+  set_sleep_mode(SLEEP_MODE_PWR_DOWN);
+  sleep_enable();
+  
+  sleep_cpu();
+  sleep_disable(); 
+
+  ADCSRA |= (1<<ADEN);
+}
+
+
+// SETUP
 
 void setupHardware() {
-  // Pin dei pulsanti (INPUT)
+  // Pin dei pulsanti in input
   pinMode(PIN1, INPUT);
   pinMode(PIN2, INPUT);
   pinMode(PIN3, INPUT);
   pinMode(PIN4, INPUT);
   
-  // Pin dei LED (OUTPUT)
-  pinMode(PIN_LS, OUTPUT); // LED Rosso
-  pinMode(PIN_L1, OUTPUT);
-  pinMode(PIN_L2, OUTPUT);
-  pinMode(PIN_L3, OUTPUT);
-  pinMode(PIN_L4, OUTPUT);
-
+  // Pin led rosso di output
+  pinMode(PIN_LS, OUTPUT); 
+  
   // Setup dell'LCD
   lcd_setup();
     
-  // Inizializzazione della seriale (mantenuta per debug)
+  // Inizializzazione della seriale
   Serial.begin(9600);
 }
 
