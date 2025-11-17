@@ -1,3 +1,0 @@
-/Users/lucafabbri/Desktop/IOT-Assignment1/Progetto-IOT-C/cmake-build-debug/CMakeFiles/Progetto_IOT_C.dir
-/Users/lucafabbri/Desktop/IOT-Assignment1/Progetto-IOT-C/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/lucafabbri/Desktop/IOT-Assignment1/Progetto-IOT-C/cmake-build-debug/CMakeFiles/rebuild_cache.dir
